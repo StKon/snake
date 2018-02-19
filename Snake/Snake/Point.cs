@@ -56,5 +56,14 @@ namespace Snake
         {
             return x + ", " + y + ", " + sym;
         }
+
+        //затереть точку на экране
+        public void Clear()
+        {
+            char savesym = sym;
+            sym = ' ';
+            Draw();
+            sym = savesym;
+        }
     }
 }
