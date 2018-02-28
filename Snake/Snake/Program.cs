@@ -28,29 +28,42 @@ namespace Snake
             Snake snake = new Snake(p, 4, Direction.RIGHT);
             snake.Drow();
 
-            Thread.Sleep(400);  //задержка 400 млсек
-            snake.Move();
-            Thread.Sleep(400);  //задержка 400 млсек
-            snake.Move();
-            Thread.Sleep(400);  //задержка 400 млсек
-            snake.Move();
-            Thread.Sleep(400);  //задержка 400 млсек
-            snake.Move();
-            Thread.Sleep(400);  //задержка 400 млсек
-            snake.Move();
-            Thread.Sleep(400);  //задержка 400 млсек
-            snake.Move();
-            Thread.Sleep(400);  //задержка 400 млсек
-            snake.Move();
-            Thread.Sleep(400);  //задержка 400 млсек
-            snake.Move();
-            Thread.Sleep(400);  //задержка 400 млсек
-            snake.Move();
-            Thread.Sleep(400);  //задержка 400 млсек
-            snake.Move();
-            
+            //Обработка нажатия клавиш
+            while (true)  //бесконечный цикл
+            {
+                if (Console.KeyAvailable)
+                {
+                    ConsoleKeyInfo key = Console.ReadKey();
+                    snake.HandleKey(key.Key);
+                }
+                Thread.Sleep(200);  //задержка 200 млсек
+                snake.Move();
+            }
 
-            Console.ReadLine();
+/*            
+            Thread.Sleep(400);  //задержка 400 млсек
+            snake.Move();
+            Thread.Sleep(400);  //задержка 400 млсек
+            snake.Move();
+            Thread.Sleep(400);  //задержка 400 млсек
+            snake.Move();
+            Thread.Sleep(400);  //задержка 400 млсек
+            snake.Move();
+            Thread.Sleep(400);  //задержка 400 млсек
+            snake.Move();
+            Thread.Sleep(400);  //задержка 400 млсек
+            snake.Move();
+            Thread.Sleep(400);  //задержка 400 млсек
+            snake.Move();
+            Thread.Sleep(400);  //задержка 400 млсек
+            snake.Move();
+            Thread.Sleep(400);  //задержка 400 млсек
+            snake.Move();
+            Thread.Sleep(400);  //задержка 400 млсек
+            snake.Move();
+  */          
+
+            //Console.ReadLine();
         }
     }
 }
