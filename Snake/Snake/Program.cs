@@ -13,6 +13,25 @@ namespace Snake
         {
             Console.SetBufferSize(80, 25);
 
+            HorizontalLine hl = new HorizontalLine(0, 78, 24, '+');
+            VerticalLine vl = new VerticalLine(0, 24, 0, '+');
+            Point p1 = new Point(4, 5, '*');
+            Figure fsnake = new Snake(p1, 4, Direction.RIGHT);
+            Snake sn = (Snake)fsnake;
+
+            List<Figure> figures = new List<Figure>();
+            figures.Add(hl);
+            figures.Add(vl);
+            figures.Add(sn);
+            foreach (Figure f in figures)
+            {
+                f.Drow();
+                Console.WriteLine(f.GetType().ToString());
+
+            }
+            Console.ReadKey();
+            return;
+
             //отрисовать рамку
             HorizontalLine upLine = new HorizontalLine(0, 78, 0, '+');
             HorizontalLine downLine = new HorizontalLine(0, 78, 24, '+');

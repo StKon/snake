@@ -12,7 +12,7 @@ namespace Snake
         protected List<Point> pList;
 
         //Вывод на экран
-        public void Drow()
+        public virtual void Drow()
         {
             foreach (Point p in pList)
             {
