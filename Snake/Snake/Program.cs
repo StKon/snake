@@ -13,15 +13,8 @@ namespace Snake
         {
             Console.SetBufferSize(80, 25);
 
-            //отрисовать рамку
-            HorizontalLine upLine = new HorizontalLine(0, 78, 0, '+');
-            HorizontalLine downLine = new HorizontalLine(0, 78, 24, '+');
-            VerticalLine leftLine = new VerticalLine(0, 24, 0, '+');
-            VerticalLine rightLine = new VerticalLine(0, 24, 78, '+');
-            upLine.Drow();
-            downLine.Drow();
-            leftLine.Drow();
-            rightLine.Drow();
+            Walls walls = new Walls(80, 25);
+            walls.Draw();
 
             //отрисовать змейку
             Point p = new Point(4, 5, '*');
@@ -36,6 +29,11 @@ namespace Snake
             //Обработка нажатия клавиш
             while (true)  //бесконечный цикл
             {
+                if (walls.IsHit(snake) || snake.IsHitTail())  //змейка столкнулась с рамкой или собственным хвостом
+                {
+                    break;
+                }
+
                 if(snake.Eat(food))  //еда
                 {
                     food = foodCreator.CreateFood();  //съели еду. Появляется новая еда
