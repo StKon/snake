@@ -18,7 +18,7 @@ namespace Snake
             Point p1 = new Point(4, 5, '*');
             Figure fsnake = new Snake(p1, 4, Direction.RIGHT);
             Snake sn = (Snake)fsnake;
-
+            
             List<Figure> figures = new List<Figure>();
             figures.Add(hl);
             figures.Add(vl);
@@ -26,7 +26,7 @@ namespace Snake
             foreach (Figure f in figures)
             {
                 f.Drow();
-                Console.WriteLine(f.GetType().ToString());
+                //Console.WriteLine(f.GetType().ToString());
 
             }
             Console.ReadKey();
